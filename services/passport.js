@@ -24,6 +24,7 @@ passport.use(
       proxy: true
     },
     (accessToken, refreshToken, profile, done) => {
+      console.log('DNEYKOV-search');
       User.findOne({ googleId: profile.id }).then(existingUser => {
         existingUser
           ? done(null, existingUser)
